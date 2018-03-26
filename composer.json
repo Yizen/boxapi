@@ -1,6 +1,6 @@
 {
-    "name": "yizen/boxapi",
-    "description": "Latest Box API for Standard User & App User and Watermarking",
+    "name": "maengkom/boxapi",
+    "description": "Latest Box API for Standard User & App User",
     "keywords": ["box", "boxapi", "laravel"],
     "license": "MIT",
     "type": "library",
