@@ -290,4 +290,31 @@ trait BoxContent {
 		return $data;
 	}
 
+
+    /*
+    |
+    | ================================= Watermark API Methods ============================
+    | Check Box documentation here https://developer.box.com/reference#apply-watermark-on-file
+    |
+    */
+
+    /* Get Watermark on File */
+    public function getWatermark($file_id, $json = false) {
+        $url = $this->api_url . "/files/$file_id/watermark";
+        return $this->get($url, $json);
+    }
+
+    /* Apply Watermark on File */
+    public function putWatermark($file_id, $imprint = 'default', $json = false) {
+        $url = $this->api_url . "/files/$file_id/watermark";
+        $data = "-d '{\"watermark\": {\"imprint\": \"$imprint\"}}'";
+        return $this->put($url, $json);
+    }
+
+    /* Delete Watermark on file */
+    public function deleteWatermark($file_id) {
+        $url = $this->api_url . "/files/$file_id/watermark";
+        return $this->delete($url);
+    }
+
 }
